@@ -1,0 +1,24 @@
+{
+  "name": "a04-elvin-liu237",
+  "version": "1.0.0",
+  "description": "Stand up API, in this case it is an API for rolling a dice",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-Elvin-Liu237.git"
+  },
+  "author": "Elvin-Liu237",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-Elvin-Liu237/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a04-Elvin-Liu237#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.7"
+  }
+}
