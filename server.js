@@ -26,12 +26,27 @@ app.get('/app/roll/', (req, res) => {
     res.send(roll(Sides, Dice, Rolls))
 })
 
-'check if JSOn or URL encoded'
+'check if JSON or URL encoded'
 
 app.get('/app/roll/', (req, res) => {
-    
+
+    let Sides = 6;
+    let Dice = 2;
+    let Rolls = 1;
+     
+    if (req.body.sides) {
+        Sides = parseInt(req.body.sides)
+    }
+    if (req.body.dice) {
+        Dice = parseInt(req.body.dice)
+    }
+    if (req.body.rolls) {
+        Rolls = parseInt(req.body.rolls)
+    }
+ 
     res.setHeader('Content-Type', 'application/json')
-    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
+    res.status(200).send(roll(Sides, Dice, Rolls))
+    //res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
 })
 
 'Endpoint /app/roll/:sides/ that returns JSON for a default number of rolls'
