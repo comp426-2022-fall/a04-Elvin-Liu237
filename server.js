@@ -12,7 +12,7 @@ const sides = 6;
 const dice  = 2;
 const rolls = 1;
 
-app.use(express.json())
+
 app.use(express.urlencoded({extended: true}))
 
 'Check endpoint at /app/ that returns 200 OK.'
@@ -27,7 +27,7 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice),parseInt(req.body.rolls)))
+    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
 })
 
 'Endpoint /app/roll/:sides/ that returns JSON for a default number of rolls'
