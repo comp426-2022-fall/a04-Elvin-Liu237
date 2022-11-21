@@ -8,9 +8,9 @@ const args = minimist(process.argv.slice(2));
 
 const port = args.port || 5000;
 
-const sides = 6;
-const dice  = 2;
-const rolls = 1;
+const Sides = 6;
+const Dice  = 2;
+const Rolls = 1;
 
 
 app.use(express.urlencoded({extended: true}))
@@ -23,7 +23,7 @@ app.get('/app/', (req, res) => {
 
 'Endpoint /app/roll/ that returns JSON for a default roll of two six-sided dice one time.'
 app.get('/app/roll/', (req, res) => {
-    res.send(roll(6, 2, 1))
+    res.send(roll(Sides, Dice, Rolls))
 })
 
 app.get('/app/roll/', (req, res) => {
@@ -32,12 +32,12 @@ app.get('/app/roll/', (req, res) => {
 
 'Endpoint /app/roll/:sides/ that returns JSON for a default number of rolls'
 app.get('/app/roll/:sides/', (req, res) => {
-    res.send(roll(parseInt(req.params.sides), 2, 1))
+    res.send(roll(parseInt(req.params.sides), Dice, Rolls))
 })
 
 'Endpoint /app/roll/:sides/:dice/ that returns JSON for a default number of rolls'
 app.get('/app/roll/:sides/:dice/', (req, res) => {
-    res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1))
+    res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), Rolls))
 })
 
 'Endpoint /app/roll/:sides/:dice/:rolls/'
