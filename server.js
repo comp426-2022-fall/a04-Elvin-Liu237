@@ -26,7 +26,11 @@ app.get('/app/roll/', (req, res) => {
     res.send(roll(Sides, Dice, Rolls))
 })
 
+'check if JSOn or URL encoded'
+
 app.get('/app/roll/', (req, res) => {
+    
+    res.setHeader('Content-Type', 'application/json')
     res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)))
 })
 
