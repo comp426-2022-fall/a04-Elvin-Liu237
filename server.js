@@ -46,3 +46,11 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)))
 })
 
+'404 error not found'
+
+app.get('*', (req, res) => {
+    res.status(404).send("404 NOT FOUND")
+})
+
+app.listen(port);
+
