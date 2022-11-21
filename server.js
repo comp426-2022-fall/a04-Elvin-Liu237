@@ -27,7 +27,7 @@ app.get('/app/roll/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.status(200).json.roll(parseInt(req.body.sides), parseInt(req.body.dice),parseInt(req.body.rolls))
+    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice),parseInt(req.body.rolls)))
 })
 
 'Endpoint /app/roll/:sides/ that returns JSON for a default number of rolls'
